@@ -19,7 +19,7 @@ const webrequest = (app, fs) => {
         console.log(req.headers);
 
 
-        http.get('http://127.0.0.1:3002/users', (resp) => {
+        http.get('http://node-service-secondhop-external.lasercannon:8081/users', (resp) => {
         let data = '';
 
         // A chunk of data has been recieved.
