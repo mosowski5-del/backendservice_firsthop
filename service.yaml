@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-service-firsthop-external
+  namespace: lasercannon
+spec:
+  selector:
+    app: node-service-firsthop
+  ports:
+    - protocol: TCP
+      port: 8080 # The Service port (what you'll access on localhost)
+      targetPort: 3001 # The container port (where your Node.js app runs)
+  type: LoadBalancer # The type Docker Desktop handles for you

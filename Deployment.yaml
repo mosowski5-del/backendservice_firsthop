@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-service-deployment-firsthop
+  namespace: lasercannon # <--- Specify the namespace here
+  labels:
+    app: node-service-firsthop
+spec:
+  replicas: 1 # Start with 1 replica for local testing
+  selector:
+    matchLabels:
+      app: node-service-firsthop
+  template:
+    metadata:
+      labels:
+        app: node-service-firsthop
+    spec:
+      containers:
+      - name: node-service-firsthop
+        image: firsthop:latest # Your local image tag
+        ports:
+        - containerPort: 3001
+        # Recommended setting for local images in dev environments:
+        imagePullPolicy: IfNotPresent
