@@ -1,7 +1,7 @@
 const http = require('http');
 const options = {
-  hostname: 'localhost',
-  port: '3002',
+  hostname: 'node-service-secondhop-external.lasercannon',
+  port: '8081',
   path: '/users',
   method: 'GET',
   headers: {
